@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+    <title th:text="${param.error}">error</title>
+</head>
+<body>
+<h1 th:text="${param.error}">redirect_uri_mismatch</h1>
+<div th:text="${param.error_description}">The redirect_uri MUST match the registered callback URL for this application.</div>
+<a th:href="${param.error_uri}" th:text="${param.error_uri}">https://developer.github.com/v3/oauth/#redirect-uri-mismatch(2)</a>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>tonr</title>
+</head>
+<body>
+
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"
+           href="https://github.com/spring-projects/spring-security-oauth">
+            Tonr</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/index">home</a></li>
+            <li><a href="/sparklr/photos">sparklr pics</a></li>
+            <li><a href="/facebook/info">facebook
+                friends</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+    #if (! $param.authentication_error )
+        <h1>Woops!</h1>
+
+        <p class="error">Your login attempt was not successful.</p>
+    #end
+    #if (! $param.authorization_error )
+        <h1>Woops!</h1>
+
+        <p class="error">You are not permitted to access that resource.</p>
+    #end
+
+    <p>Tonr.com has only two users: "marissa" and "sam". The password
+        for "marissa" is password is "wombat" and for "sam" is password is
+        "kangaroo".</p>
+
+    <form action="/login" method="post" role="form">
+        <fieldset>
+            <legend>
+                <h2>Login</h2>
+            </legend>
+            <div class="form-group">
+                <label for="username">Username:</label> <input id="username"
+                                                               class="form-control" type='text' name='username' value="username" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label> <input id="password"
+                                                               class="form-control" type='text' name='password' value="password" />
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </fieldset>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+
+            if (window.opener) {
+                window.close();
+            } else {
+                document.location.href = "/";
+            }
+
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
